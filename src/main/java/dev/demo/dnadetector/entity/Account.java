@@ -1,6 +1,7 @@
 package dev.demo.dnadetector.entity;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 @Entity
 public class Account {
@@ -9,8 +10,11 @@ public class Account {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
+    @NotNull
+    @Column(unique=true)
     private String username;
 
+    @NotNull
     private String password;
 
     public long getId() {
