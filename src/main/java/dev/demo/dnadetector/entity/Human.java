@@ -1,21 +1,25 @@
 package dev.demo.dnadetector.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
-import java.util.UUID;
-
+@Entity
 public class Human {
 
-    @JsonIgnore
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    private UUID uuid;
-
+    @NotNull
+    @Column(unique=true)
     private String name;
 
-    private String[] dna;
+    @OneToOne()
+    @JoinColumn(nullable=false)
+    private DNA dna;
 
-    private Boolean mutant;
+    public Human() {
+    }
 
     public Integer getId() {
         return id;
@@ -23,14 +27,6 @@ public class Human {
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public UUID getUuid() {
-        return uuid;
-    }
-
-    public void setUuid(UUID uuid) {
-        this.uuid = uuid;
     }
 
     public String getName() {
@@ -41,19 +37,12 @@ public class Human {
         this.name = name;
     }
 
-    public String[] getDna() {
+    public DNA getDna() {
         return dna;
     }
 
-    public void setDna(String[] dna) {
+    public void setDna(DNA dna) {
         this.dna = dna;
     }
 
-    public Boolean getMutant() {
-        return mutant;
-    }
-
-    public void setMutant(Boolean mutant) {
-        this.mutant = mutant;
-    }
 }

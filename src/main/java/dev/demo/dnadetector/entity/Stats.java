@@ -5,34 +5,40 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class Stats {
 
     @JsonProperty("count_mutations")
-    private Integer countMutations;
+    private Integer mutants;
 
     @JsonProperty("count_no_mutations")
-    private Integer countNoMutations;
+    private Integer noMutants;
 
-    private Integer ratio;
+    private Double ratio;
 
-    public Integer getCountMutations() {
-        return countMutations;
+    public Stats(Integer mutants, Integer noMutants, Double ratio) {
+        this.mutants = mutants;
+        this.noMutants = noMutants;
+        this.ratio = ratio;
     }
 
-    public void setCountMutations(Integer countMutations) {
-        this.countMutations = countMutations;
+    public Integer getMutants() {
+        return mutants;
     }
 
-    public Integer getCountNoMutations() {
-        return countNoMutations;
+    public void setMutants(Integer mutants) {
+        this.mutants = mutants;
     }
 
-    public void setCountNoMutations(Integer countNoMutations) {
-        this.countNoMutations = countNoMutations;
+    public Integer getNoMutants() {
+        return noMutants;
     }
 
-    public Integer getRatio() {
+    public void setNoMutants(Integer noMutants) {
+        this.noMutants = noMutants;
+    }
+
+    public Double getRatio() {
         return ratio;
     }
 
-    public void setRatio(Integer ratio) {
+    public void setRatio(Double ratio) {
         this.ratio = ratio;
     }
 }
