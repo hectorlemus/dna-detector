@@ -1,0 +1,22 @@
+.circle-red, .circle-green {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.circle-red {
+    background-color: #ff1744;
+}
+
+.circle-green {
+    background-color: #00e676;
+}
+
+.mutant {
+    color: #ff1744;
+}
+
+.no-mutant {
+    color: #00e676;
+}

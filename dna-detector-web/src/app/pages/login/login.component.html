@@ -1,0 +1,28 @@
+<div class="content">
+  <div class="container">
+    <nav class="nav">
+      <h4 class="text-danger pt-5">DNA Detector</h4>
+    </nav>
+
+    <div class="row">
+      <div class="col-sm-4 offset-sm-8 login text-center">
+        <form [formGroup]="loginForm" (ngSubmit)="login()">
+          <div class="inputs">
+            <input class="user" type="text" placeholder="Usuario" formControlName="username">
+            <br>
+            <input class="password" type="password" placeholder="Contraseña" formControlName="password">
+            <br>
+
+            <div *ngIf="hasError" class="text-danger">revise las credenciales</div>
+
+            <div class="spinner-border" role="status" *ngIf="isSubmitted">
+              <span class="sr-only">Loading...</span>
+            </div>
+          </div>
+          <br>
+          <input class="btn-login" type="submit" value="Ingresar">
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,83 @@
+<div class="container">
+  <div class="header">
+    <nav class="navbar navbar-expand-lg">
+      <h5 class="text-white">DNA detector</h5>
+
+      <div class="collapse navbar-collapse ml-3">
+        <h5 *ngIf="stats" class="text-white">
+          CM: {{ stats.count_mutations}}
+          SM: {{ stats.count_no_mutations}}
+        </h5>
+      </div>
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      </button>
+
+      <div id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false">
+              <i class="fa fa-bars text-white" aria-hidden="true"></i>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" (click)="logOut()">cerrar sesión</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <ul class="nav text-center mt-4">
+      <li class="nav-item col-sm-3">
+        <button type="button" class="btn btn-sm newHuman" data-toggle="modal" data-target="#newHuman">
+          Nuevo humano
+        </button>
+      </li>
+      <li class="nav-item col-sm-3">
+        <button type="button" class="btn btn-sm" (click)="getStats()">
+          Analizar humanos
+        </button>
+      </li>
+      <li class="nav-item col-sm-3">
+        <a routerLink="mutants" class="btn btn-sm">Con mutación</a>
+      </li>
+      <li class="nav-item col-sm-3">
+        <a routerLink="no-mutants" class="btn btn-sm">Sin mutación</a>
+      </li>
+    </ul>
+  </div>
+
+  <div>
+    <router-outlet></router-outlet>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="newHuman" tabindex="-1" role="dialog" aria-labelledby="newHumanTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-body text-center">
+        <span class="circle-blue m-4"></span>
+        <div>
+          <form [formGroup]="humanForm" (ngSubmit)="add()">
+            <input type="text" class="input-name" placeholder="Nombre de humano" formControlName="name" maxlength="100">
+            <br>
+
+            <div *ngIf="hasError" class="text-danger">
+              No se pudo completar el registro, el humano puede ya estar registrado.
+            </div>
+            <div class="spinner-border" role="status" *ngIf="isSubmitted">
+              <span class="sr-only">Loading...</span>
+            </div>
+            <br>
+
+            <input type="submit" value="Crear humano" class="btn-addHuman">
+          </form>
+        </div>
+        <button #closeModal type="button" style="display: none;" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

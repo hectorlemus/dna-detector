@@ -1,0 +1,45 @@
+.header {
+    background-color: #2962ff;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+}
+
+.dropdown-toggle::after {
+    display: none;
+}
+
+.btn {
+    border-radius: 20px;
+    background-color: #304ffe;
+    color: #FFFFFF;
+    margin: 2px;
+}
+
+.newHuman {
+    background-color: #ff1744;
+}
+
+.circle-blue {
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    display: inline-block;
+    background-color: #00b0ff;
+}
+
+.input-name {
+    margin-top: 25px;
+    margin-bottom: 25px;
+    border: none;
+    border-bottom: 2px solid steelblue;
+}
+
+.btn-addHuman {
+    border-radius: 20px;
+    background-color: #FFC107;
+    border: none;
+    padding: 4px;
+    width: 160px;
+}

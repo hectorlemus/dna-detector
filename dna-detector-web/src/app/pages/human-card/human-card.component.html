@@ -1,0 +1,13 @@
+<div class="row shadow-sm p-3 bg-white rounded m-2">
+  <div class="col-sm-3">
+    <span class="circle-red" *ngIf="mutant"></span>
+    <span class="circle-green" *ngIf="!mutant"></span>
+  </div>
+
+  <div class="col-sm-9">
+    <div>{{ name }}</div>
+    <div>Creado en: {{ createdAt | date : 'yyyy/MM/dd' }} </div>
+    <div *ngIf="mutant" class="mutant">CON MUTACION</div>
+    <div *ngIf="!mutant" class="no-mutant">SIN MUTACION</div>
+  </div>
+</div>

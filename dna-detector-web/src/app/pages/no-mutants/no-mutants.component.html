@@ -1,0 +1,9 @@
+<div class="row center-text">
+    <div *ngFor="let human of humans;" class="col-sm-4">
+        <app-human-card
+        [name]="human.name"
+        [createdAt]="human.created"
+        [mutant]="false">
+        </app-human-card>
+    </div>
+</div>

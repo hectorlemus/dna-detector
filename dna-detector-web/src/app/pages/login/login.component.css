@@ -1,0 +1,34 @@
+.content {
+    background: #43C6AC;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #191654, #43C6AC);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #191654, #43C6AC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        
+    
+    height: 100vh;
+}
+
+.login {
+    margin-top: 120px;
+}
+
+.inputs {
+    background-color: #ffffff;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    border-radius: 8px;
+}
+
+.user, .password {
+    margin-top: 25px;
+    margin-bottom: 25px;
+    border: none;
+    border-bottom: 2px solid steelblue;
+}
+
+.btn-login {
+    border-radius: 20px;
+    background-color: #FFC107;
+    border: none;
+    padding: 10px;
+    width: 160px;
+}
